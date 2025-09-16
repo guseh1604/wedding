@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wedding/static/css/main.ce6ec026.css",
-    "main.js": "/wedding/static/js/main.ad275c91.js",
+    "main.css": "/wedding/static/css/main.d6cb3980.css",
+    "main.js": "/wedding/static/js/main.ec2f7d73.js",
     "static/js/453.b0928d06.chunk.js": "/wedding/static/js/453.b0928d06.chunk.js",
     "static/media/bgm01.mp3": "/wedding/static/media/bgm01.4aef57a8aad87b7ff0c6.mp3",
     "static/media/nanum-myeongjo-v15-latin_korean-700.woff": "/wedding/static/media/nanum-myeongjo-v15-latin_korean-700.97542ed131240b539d10.woff",
@@ -21,12 +21,12 @@
     "static/media/modal_bride.svg": "/wedding/static/media/modal_bride.31507443b2bb1ad08e84.svg",
     "index.html": "/wedding/index.html",
     "static/media/modal_close.svg": "/wedding/static/media/modal_close.d8812969aac363a13ecc.svg",
-    "main.ce6ec026.css.map": "/wedding/static/css/main.ce6ec026.css.map",
-    "main.ad275c91.js.map": "/wedding/static/js/main.ad275c91.js.map",
+    "main.d6cb3980.css.map": "/wedding/static/css/main.d6cb3980.css.map",
+    "main.ec2f7d73.js.map": "/wedding/static/js/main.ec2f7d73.js.map",
     "453.b0928d06.chunk.js.map": "/wedding/static/js/453.b0928d06.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce6ec026.css",
-    "static/js/main.ad275c91.js"
+    "static/css/main.d6cb3980.css",
+    "static/js/main.ec2f7d73.js"
   ]
 }
