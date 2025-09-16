@@ -772,7 +772,7 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 	text-align:center;
 }
 
-.livewed-section .button a {
+.livewed-section .button button {
 	width: 12.5rem;
     height: 2.5rem;
     border-radius: 2.5rem;
@@ -876,7 +876,9 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 	padding:0 0.625rem;
 	box-sizing:content-box;
 }
-.location-section .link a{
+.location-section .link button{
+	background: unset;
+	cursor: pointer;
 	position:relative;
 	display:block;
 	padding-top:3.438rem;
@@ -887,7 +889,7 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 	color:#111;
 	text-decoration:none;
 }
-.location-section .link a:after{
+.location-section .link button:after{
 	content:'';
 	display:block;
 	position: absolute;
@@ -1228,7 +1230,8 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 	padding:0 0.938rem;
 	box-sizing:content-box;
 }
-.foot-share a{
+.foot-share button{
+	background: unset;
 	position:relative;
 	display:block;
 	padding-top:3.563rem;
@@ -1240,7 +1243,7 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 	color:#aaa;
 	text-decoration:none;
 }
-.foot-share a:after{
+.foot-share button:after{
 	content:'';
 	display:block;
 	position: absolute;

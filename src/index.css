@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
