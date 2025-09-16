@@ -1,0 +1,13 @@
+@font-face {
+	font-family:'campton';
+	font-style:normal;
+	font-weight:100;
+	src:url(../fonts/campton/Campton-LightDEMO.woff) format('woff');
+}
+
+@font-face {
+	font-family:'campton';
+	font-style:normal;
+	font-weight:600;
+	src:url(../fonts/campton/Campton-BoldDEMO.woff) format('woff')
+}
