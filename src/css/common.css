@@ -26,7 +26,6 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 .messageDelete .buttons:after{content:''; display:block; clear:both;}
 .messageDelete .buttons .btn{display:block; float:left; width:50%; background:#fff; font-family:"Noto Sans KR"; font-size:1rem; font-weight:400; line-height:3.125rem; text-align:center; color:#111; border-top:1px solid #eee; border-left:1px solid #eee;text-decoration:none;}
 .messageDelete .buttons .btn:first-child{border-left:0;}
-.messageDelete .close-btn{position:absolute; right:0; top:0; display:block; width:3.375rem; height:3.125rem; background:url("../images/common/message_delete_02.png") 50% 50% no-repeat; background-size:0.875rem; font-size:0; line-height:0;}
 
 .accountCopy .pop-head{font-family:"Noto Sans KR"; font-size:1.125rem; font-weight:400; line-height:3.125rem;text-align:center; color:#111; border-bottom:1px solid #55aaba;}
 .accountCopy .pop-body{padding:0 0 2.5rem;}
@@ -667,17 +666,6 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 	position: absolute;
 	left:0.313rem; bottom:0.313rem;
 }
-.gallery-pop-wrap .close-btn{
-	position: absolute;
-	right: 0; top: 0;
-	display:block;
-	width: 3.375rem;
-	height:3.188rem;
-	background: url("../images/common/gallery_close.png") 50% 50% no-repeat;
-	background-size:0.875rem auto;
-	font-size: 0;
-	line-height: 0;
-}
 
 .gallery-section .type2-list{
 	margin:-0.125rem -0.063rem 0;
@@ -1132,16 +1120,6 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 .message-section .comment-list .txt.big-large{	
 	font-size:1rem;	
 }
-.message-section .comment-list .delete-btn{
-	position:absolute;
-	right:0; top:0.750rem;
-	width:1.250rem;
-	height:1.250rem;
-	background:#111 url("../images/common/message_delete.png") 50% 50% no-repeat;
-	background-size:0.5rem;
-	font-size: 0;
-	line-height: 0;
-}
 
 
 /* 참석여부 팝업 1 */
@@ -1260,30 +1238,6 @@ body{background:url("../images/common/bg_white.jpg") 0 0 repeat-y; background-si
 }
 .foot-share .facebook:after{
 	background-image:url("../images/common/footer_facebook.png");
-}
-.foot-logo{
-	display:-webkit-box; 
-	display:-ms-flexbox; 
-	display:flex;
-	height:3.688rem;
-	align-items: center;
-	justify-content: center;
-	-webkit-box-orient: vertical;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	background:#333;
-	font-size:0;
-	line-height:0;
-	text-align:center;
-}
-.foot-logo:after{
-	content:'';
-	display:block;
-	width:3.469rem;
-	height:0.906rem;
-	margin:0 auto;
-	background:url("../images/common/footer_logo.png") 0 0 no-repeat;
-	background-size:3.469rem auto;
 }
 
 /* ******************************** 미디어 쿼리 ******************************** */

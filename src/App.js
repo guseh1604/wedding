@@ -349,7 +349,7 @@ function App() {
                 </div>
               </div>
               <div className="day-time">
-                <span className="day">sat.</span> <span className="time">pm 1:30</span>
+                <span className="day">sat.</span> <span className="time">pm 14:00</span>
               </div>
             </div>
           </section>

@@ -22,7 +22,6 @@ ul, span { display:inline-block}
 a {color:#555;display:block;}
 a:hover { font-weight:bold;text-decoration:none;}
 img {max-width:100%;vertical-align:top;font-size:0px;border:0 none;}
-/* ?겕濡?,?븞?뱶濡쒖씠?뱶 ?씤?뭼諛뺤뒪 input[type="checkbox"]{-webkit-appearance:none;-webkit-border-radius:0}*/
 input,button,textarea {border-radius:0;vertical-align:top;}
 input:checked[type="checkbox"]{-webkit-appearance:checkbox}
 input[type=text], input[type=password], input[type=submit], input[type=search], input[type=file], textarea, select { box-sizing:border-box;-webkit-appearance:none;}
