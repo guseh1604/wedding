@@ -55,6 +55,7 @@ import img41 from './images/picture/41.jpg';
 
 import { useEffect, useState } from 'react';
 import $ from 'jquery';
+import { Oval } from 'react-loader-spinner';
 
 function App() {
   const [audio] = useState(new Audio(music_02));
@@ -64,6 +65,7 @@ function App() {
   const [copyText2, setCopyText2] = useState('');
   const [name, setName] = useState(''); // 이름
   const [comment, setComment] = useState(''); // 댓글
+  const [isLoading, setIsLoading] = useState(false); // 로딩
 
   const scriptUrl = process.env.REACT_APP_APPS_SCRIPT_URL;
 
@@ -76,6 +78,7 @@ function App() {
       return;
     }
 
+    setIsLoading(true);
     fetch(scriptUrl, {
       redirect: "follow",
       method: "POST",
@@ -91,6 +94,7 @@ function App() {
     }).catch((error) => {
       console.log('error', error)}
     ).finally(() => {
+      setIsLoading(false);
       setName('');
       setComment('');
       setCopyText('댓글이 등록되었습니다.');
@@ -805,6 +809,14 @@ function App() {
           </div>
         </section>
       </div>
+      {isLoading && (
+        <div style={{width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 9999, backgroundColor: 'rgba(0, 0, 0, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+          <Oval
+            strokeWidth={4}
+            strokeWidthSecondary={4}
+          />
+        </div>
+      )}
     </div>
   );
 }
