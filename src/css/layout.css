@@ -175,7 +175,7 @@
 	position:relative;
 	padding:3.406rem 4.594rem;
 }
-.mcard_35 .visual-section .vertical-item.name:after{
+/* .mcard_35 .visual-section .vertical-item.name:after{
 	content:'';
 	position:absolute;
 	left:4.594rem; top:0;
@@ -194,7 +194,7 @@
 	height:8.781rem;
 	background:url("../images/mcard_35/visual_02.png") 0 0 no-repeat;
 	background-size:100% auto;
-}
+} */
 .mcard_35 .visual-section .vertical-item.name .name{
 	position:relative;
 	z-index:10;

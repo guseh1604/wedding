@@ -5,13 +5,61 @@ import ImageGallery from "react-image-gallery";
 
 import music_01_off from './images/mcard_35/music_01_off.png';
 import music_01_on from './images/mcard_35/music_01_on.png';
-import music_01 from './music/bgm01.mp3';
+import music_02 from './music/bgm02.mp3';
+
+import heart from './images/common/heart.png';
+import invite from './images/common/invite.png';
+import spring from './images/common/spring.png';
+
+import img01 from './images/picture/01.jpg';
+import img02 from './images/picture/02.jpg';
+import img03 from './images/picture/03.jpg';
+import img04 from './images/picture/04.jpg';
+import img05 from './images/picture/05.jpg';
+import img06 from './images/picture/06.jpg';
+import img07 from './images/picture/07.jpg';
+import img08 from './images/picture/08.jpg';
+import img09 from './images/picture/09.jpg';
+import img10 from './images/picture/10.jpg';
+import img11 from './images/picture/11.jpg';
+import img12 from './images/picture/12.jpg';
+import img13 from './images/picture/13.jpg';
+import img14 from './images/picture/14.jpg';
+import img15 from './images/picture/15.jpg';
+import img16 from './images/picture/16.jpg';
+import img17 from './images/picture/17.jpg';
+import img18 from './images/picture/18.jpg';
+import img19 from './images/picture/19.jpg';
+import img20 from './images/picture/20.jpg';
+import img21 from './images/picture/21.jpg';
+import img22 from './images/picture/22.jpg';
+import img23 from './images/picture/23.jpg';
+import img24 from './images/picture/24.jpg';
+import img25 from './images/picture/25.jpg';
+import img26 from './images/picture/26.jpg';
+import img27 from './images/picture/27.jpg';
+import img28 from './images/picture/28.jpg';
+import img29 from './images/picture/29.jpg';
+import img30 from './images/picture/30.jpg';
+import img31 from './images/picture/31.jpg';
+import img32 from './images/picture/32.jpg';
+import img33 from './images/picture/33.jpg';
+import img34 from './images/picture/34.jpg';
+import img35 from './images/picture/35.jpg';
+import img36 from './images/picture/36.jpg';
+import img37 from './images/picture/37.jpg';
+import img38 from './images/picture/38.jpg';
+import img39 from './images/picture/39.jpg';
+import img40 from './images/picture/40.jpg';
+import img41 from './images/picture/41.jpg';
+
 import { useEffect, useState } from 'react';
 import $ from 'jquery';
 
 function App() {
-  const [audio] = useState(new Audio(music_01));
+  const [audio] = useState(new Audio(music_02));
   const [isPlaying, setIsPlaying] = useState(false);
+  const [copyText, setCopyText] = useState(''); // 복사된 텍스트
   const [copyText1, setCopyText1] = useState('');
   const [copyText2, setCopyText2] = useState('');
 
@@ -25,18 +73,47 @@ function App() {
   }, [isPlaying, audio]);
 
   const images = [
-    {
-      original: "https://picsum.photos/id/1018/1000/600/",
-      thumbnail: "https://picsum.photos/id/1018/250/150/",
-    },
-    {
-      original: "https://picsum.photos/id/1015/1000/600/",
-      thumbnail: "https://picsum.photos/id/1015/250/150/",
-    },
-    {
-      original: "https://picsum.photos/id/1019/1000/600/",
-      thumbnail: "https://picsum.photos/id/1019/250/150/",
-    },
+    {original: img01,thumbnail: img01,},
+    {original: img02,thumbnail: img02,},
+    {original: img03,thumbnail: img03,},
+    {original: img04,thumbnail: img04,},
+    {original: img05,thumbnail: img05,},
+    {original: img06,thumbnail: img06,},
+    {original: img07,thumbnail: img07,},
+    {original: img08,thumbnail: img08,},
+    {original: img09,thumbnail: img09,},
+    {original: img10,thumbnail: img10,},
+    {original: img11,thumbnail: img11,},
+    {original: img12,thumbnail: img12,},
+    {original: img13,thumbnail: img13,},
+    {original: img14,thumbnail: img14,},
+    {original: img15,thumbnail: img15,},
+    {original: img16,thumbnail: img16,},
+    {original: img17,thumbnail: img17,},
+    {original: img18,thumbnail: img18,},
+    {original: img19,thumbnail: img19,},
+    {original: img20,thumbnail: img20,},
+    {original: img21,thumbnail: img21,},
+    {original: img22,thumbnail: img22,},
+    {original: img23,thumbnail: img23,},
+    {original: img24,thumbnail: img24,},
+    {original: img25,thumbnail: img25,},
+    {original: img26,thumbnail: img26,},
+    {original: img27,thumbnail: img27,},
+    {original: img28,thumbnail: img28,},
+    {original: img29,thumbnail: img29,},
+    {original: img30,thumbnail: img30,},
+    {original: img31,thumbnail: img31,},
+    {original: img32,thumbnail: img32,},
+    {original: img33,thumbnail: img33,},
+    {original: img34,thumbnail: img34,},
+    {original: img35,thumbnail: img35,},
+    {original: img36,thumbnail: img36,},
+    {original: img37,thumbnail: img37,},
+    {original: img38,thumbnail: img38,},
+    {original: img39,thumbnail: img39,},
+    {original: img40,thumbnail: img40,},
+    {original: img41,thumbnail: img41,},
   ];
 
   function popOpen(padding, id) { // 팝업 열기 onclick
@@ -76,10 +153,58 @@ function App() {
 
     document.execCommand('copy');
     document.body.removeChild(tmpTextarea);
-    popClose(id);
-    setCopyText1(text1);
-    setCopyText2(text2);
-    popOpen('0 1rem', 'copyComplete');
+    if (id) {
+      popClose(id);
+      setCopyText('계좌번호가 복사되었습니다.');
+      setCopyText1(text1);
+      setCopyText2(text2);
+      popOpen('0 1rem', 'copyComplete');
+    } else {
+      setCopyText('링크가 복사되었습니다.');
+      setCopyText1('');
+      setCopyText2('');
+      popOpen('0 1rem', 'copyComplete');
+    }
+  }
+
+  useEffect(() => {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO_JAVASCRIPT_KEY);
+    }
+  }, []);
+
+  function shareOnKakao() {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO_JAVASCRIPT_KEY);
+    }
+
+    window.Kakao.Share.sendCustom({
+      templateId: 124406
+    });
+  }
+
+  function checknull(value, returndata) {
+    if (value === undefined || value === "") {
+      if (returndata !== null) return returndata;
+      return "";
+    } else {
+      return value;
+    }
+  }
+
+  // 전화 걸기 기능을 정의한 함수
+  function makeCall(phoneNumber) {
+    if (checknull(phoneNumber, "") === "") {
+      return false;
+    }
+    window.location.href = 'tel:' + phoneNumber;
+  }
+
+  function makeSms(phoneNumber) {
+    if (checknull(phoneNumber, "") === "") {
+      return false;
+    }
+    window.location.href = 'sms:' + phoneNumber;
   }
 
   return (
@@ -100,15 +225,22 @@ function App() {
             <div className="vertical-top">
               <div className="vertical-item name vertical-center">
                 <p className="name">
-                  <span className="vs-span">임현도</span>
-                  <span className="vs-span bar">&</span>
-                  <span className="vs-span">조보라</span>
+                  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem'}}>
+                    <span className="vs-span" style={{display: 'inline-flex'}}>임현도</span>
+                    <img src={heart} alt='heart' style={{display: 'inline-flex', width: '1.5rem'}}/>
+                    <span className="vs-span" style={{display: 'inline-flex'}}>조보라</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', paddingLeft: '1rem', paddingRight: '1rem'}}>
+                    <img src={spring} alt='spring1' style={{width: '1.5rem', transform: 'scaleX(-1) rotate(60deg)'}}/>
+                    <img src={spring} alt='spring2' style={{width: '1.5rem', transform: 'rotate(60deg)'}}/>
+                    <img src={invite} alt='invite' style={{position: 'absolute', transform: 'translateY(2.5rem) translateX(-0.5rem)'}}/>
+                  </div>
                 </p>
               </div>
               <div className="vertical-item info">
                 <p className="p1">
                   <span className="vs-span">2026년01월</span>
-                  <span className="vs-span bar">10</span>
+                  <span className="vs-span bar">10일(토)</span>
                   <span className="vs-span">오후 14시 00분</span>
                 </p>
                 <p className="p2">
@@ -121,12 +253,12 @@ function App() {
           {/* 인사말 */}
           <section className="greeting-section">
             <div className="sec-tit">초 대 합 니 다</div>
-            <div className="sec-txt">서로가 마주보며 다져온 사랑을<br />
-              이제 함께 한 곳을 바라보며<br />
-              걸어갈 수 있는 큰 사랑으로<br />
-              키우고자 합니다.<br />
-              저희 두 사람이 사랑의 이름으로<br />
-              지켜나갈 수 있도록<br />
+            <div className="sec-txt">특별할 것 없던 하루가<br />
+              함께이기에 소중한 추억이 되었습니다.<br />
+              이제 둘이 아닌 하나로,<br />
+              평생을 함께할 동반자가 되어<br />
+              매일이 행복한 삶을 시작하려 합니다.<br />
+              저희의 첫걸음에 오셔서<br />
               앞날을 축복해 주시면<br />
               감사하겠습니다.
             </div>
@@ -171,15 +303,15 @@ function App() {
               <div className="row">
                 <div className="slsb-tit">신랑에게 연락하기</div>
                 <div className="slsb-btn">
-                  <button className="com-btn tel sl" style={{ cursor: 'pointer' }}>연락하기</button>
-                  <button className="com-btn sms" style={{ cursor: 'pointer' }}>문자보내기</button>
+                  <button className="com-btn tel sl" style={{ cursor: 'pointer' }} onClick={() => {makeCall('010-4244-1604')}}>연락하기</button>
+                  <button className="com-btn sms" style={{ cursor: 'pointer' }} onClick={() => {makeSms('010-4244-1604')}}>문자보내기</button>
                 </div>
               </div>
               <div className="row">
                 <div className="slsb-tit">신부에게 연락하기</div>
                 <div className="slsb-btn">
-                  <button className="com-btn tel sb" style={{ cursor: 'pointer' }}>연락하기</button>
-                  <button className="com-btn sms" style={{ cursor: 'pointer' }}>문자보내기</button>
+                  <button className="com-btn tel sb" style={{ cursor: 'pointer' }} onClick={() => {makeCall('010-2506-5013')}}>연락하기</button>
+                  <button className="com-btn sms" style={{ cursor: 'pointer' }} onClick={() => {makeSms('010-2506-5013')}}>문자보내기</button>
                 </div>
               </div>
             </div>
@@ -194,15 +326,15 @@ function App() {
                 <div className="box first">
                   <div className="name"><span>아버지</span> <strong>임정후</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl">연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms">문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl" onClick={() => {makeCall('010-3696-7840')}}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-3696-7840')}}>문자보내기</button>
                   </div>
                 </div>
                 <div className="box">
                   <div className="name"><span>어머니</span> <strong>양인자</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl">연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms">문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl" onClick={() => {makeCall('010-8664-1604')}}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-8664-1604')}}>문자보내기</button>
                   </div>
                 </div>
               </div>
@@ -211,15 +343,15 @@ function App() {
                 <div className="box first">
                   <div className="name"><span>아버지</span> <strong>조인수</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb">연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms">문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb" onClick={() => {makeCall('010-5604-5013')}}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-5604-5013')}}>문자보내기</button>
                   </div>
                 </div>
                 <div className="box">
                   <div className="name"><span>어머니</span> <strong>박은경</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb">연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms">문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb" onClick={() => {makeCall('010-2431-5013')}}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-2431-5013')}}>문자보내기</button>
                   </div>
                 </div>
               </div>
@@ -387,7 +519,7 @@ function App() {
                   <p>서울특별시 종로구 성균관로 31 (명륜3가 53번지)</p>
                   <p>Tel. 02-744-0677</p>
                 </div>
-                <button style={{ cursor: 'pointer' }} className="tel">전화걸기</button>
+                <button style={{ cursor: 'pointer' }} className="tel" onClick={() => {makeCall('02-744-0677')}}>전화걸기</button>
               </div>
               <div id="map_canvas" className="map">
                 <div style={{ font: 'normal normal 400 12px/normal dotum, sans-serif', width: '100%', height: '100%', color: '#333', position: 'relative' }}>
@@ -401,16 +533,13 @@ function App() {
               <div className="link">
                 <ul>
                   <li>
-                    <button className="tmap">티맵</button>
+                    <a className="tmap" href='tmap://search?name=성균관컨벤션웨딩홀' target='_blank' rel="noreferrer">티맵</a>
                   </li>
                   <li>
-                    <button className="kakaonavi">카카오내비</button>
+                    <a className="navermap" href='https://naver.me/IMyAR0V0' target='_blank' rel="noreferrer">네이버지도</a>
                   </li>
                   <li>
-                    <button className="navermap">네이버지도</button>
-                  </li>
-                  <li>
-                    <button className="kakaomap">카카오맵</button>
+                    <a className="kakaomap" href='https://map.kakao.com/?urlX=499269.9999999987&amp;urlY=1134994.9999999988&amp;itemId=913429074&amp;q=%EC%84%B1%EA%B7%A0%EA%B4%80%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80&amp;srcid=913429074&amp;map_type=TYPE_MAP&amp;from=roughmap' target='_blank' rel="noreferrer">카카오맵</a>
                   </li>
                 </ul>
               </div>
@@ -441,7 +570,10 @@ function App() {
           {/* 축의금 계좌번호 */}
           <section className="account-section">
             <div className="sec-tit">신랑신부에게 마음 전하기</div>
-            <div className="sec-txt">축하의 마음을 담아 축의금을 전달해보세요.</div>
+            <div className="sec-txt">직접 축하를 전하지 못하는 분들을 위해<br />
+              부득이하게 계좌번호를 기재하게 되었습니다.<br />
+              넓은 마음으로 양해 부탁드립니다.<br />
+            </div>
             <div className="ib">
               <div className="row">
                 <div className="slsb-tit">신랑측 마음</div>
@@ -458,19 +590,6 @@ function App() {
             </div>
           </section>
           {/* 축의금 계좌번호 */}
-          {/* 참석여부 */}
-          <section className="livewed-section rsvp-section">
-            <div className="sec-tit">참석여부전달</div>
-            <div className="sec-txt">축하의 마음으로 참석해주시는 한 분 한 분<br />
-              귀한 마음으로 모실 수 있도록<br />
-              부담없이 알려주시면 정성을 다해 준비하겠습니다.<br />
-            </div>
-            <div className="sec-date"></div>
-            <div className="button">
-              <button style={{ cursor: 'pointer' }}>참석 의사 전달하기</button>
-            </div>
-          </section>
-          {/* 참석여부 */}
           {/* 메시지 */}
           <section className="message-section">
             <div className="sec-tit">축 하 해 주 세 요</div>
@@ -498,13 +617,13 @@ function App() {
             <div className="foot-share">
               <ul className="foot-share-list">
                 <li>
-                  <button style={{ cursor: 'pointer' }} className="kakao">
+                  <button style={{ cursor: 'pointer' }} className="kakao" onClick={shareOnKakao}>
                     카카오톡<br /> 공유하기
                   </button>
                 </li>
                 <li>
-                  <button style={{ cursor: 'pointer' }} className="facebook">
-                    페이스북<br /> 공유하기
+                  <button style={{ cursor: 'pointer' }} className="copy" onClick={() => { jsCopyLink(window.document.location.href) }}>
+                    링크<br /> 복사하기
                   </button>
                 </li>
               </ul>
@@ -563,7 +682,7 @@ function App() {
                   </form>
                 </div>
               </div>
-              <button style={{ cursor: 'pointer' }} className="close-btn" onClick={() => {popClose('accountCopyG')}}>닫기</button>
+              <button style={{ cursor: 'pointer' }} className="close-btn" onClick={() => { popClose('accountCopyG') }}>닫기</button>
             </div>
           </div>
 
@@ -575,7 +694,7 @@ function App() {
                   <form action="">
                     <div className="group col-2 first">
                       <div>
-                        국민은행
+                        우리은행
                       </div>
                       <div>
                         <span>예금주 : </span> 조보라
@@ -583,13 +702,13 @@ function App() {
                     </div>
                     <div className="group">
                       <div>
-                        <input name="BBankNum1" id="BBankNum1" className="input" readOnly value="000-123-456789" />
-                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('000-123-456789', 'accountCopyB', '국민은행 000-123-456789', '예금주 조보라') }}>복사</button>
+                        <input name="BBankNum1" id="BBankNum1" className="input" readOnly value="1002-850-792950" />
+                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('1002-850-792950', 'accountCopyB', '우리은행 1002-850-792950', '예금주 조보라') }}>복사</button>
                       </div>
                     </div>
                     <div className="group col-2">
                       <div>
-                        국민은행
+                        농협은행
                       </div>
                       <div>
                         <span>예금주 : </span> 조인수
@@ -597,13 +716,13 @@ function App() {
                     </div>
                     <div className="group">
                       <div>
-                        <input name="BBankNum2" id="BBankNum2" className="input" readOnly value="000-123-456789" />
-                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('000-123-456789', 'accountCopyB', '국민은행 000-123-456789', '예금주 조인수') }}>복사</button>
+                        <input name="BBankNum2" id="BBankNum2" className="input" readOnly value="352-2184-3455-13" />
+                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('352-2184-3455-13', 'accountCopyB', '농협은행 352-2184-3455-13', '예금주 조인수') }}>복사</button>
                       </div>
                     </div>
                     <div className="group col-2">
                       <div>
-                        국민은행
+                        하나은행
                       </div>
                       <div>
                         <span>예금주 : </span> 박인경
@@ -611,14 +730,14 @@ function App() {
                     </div>
                     <div className="group">
                       <div>
-                        <input name="BBankNum2" id="BBankNum2" className="input" readOnly value="000-123-456789" />
-                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('000-123-456789', 'accountCopyB', '국민은행 000-123-456789', '예금주 박인경') }}>복사</button>
+                        <input name="BBankNum2" id="BBankNum2" className="input" readOnly value="439-910199-11107" />
+                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('439-910199-11107', 'accountCopyB', '하나은행 439-910199-11107', '예금주 박인경') }}>복사</button>
                       </div>
                     </div>
                   </form>
                 </div>
               </div>
-              <button style={{ cursor: 'pointer' }} className="close-btn" onClick={() => {popClose('accountCopyB')}}>닫기</button>
+              <button style={{ cursor: 'pointer' }} className="close-btn" onClick={() => { popClose('accountCopyB') }}>닫기</button>
             </div>
           </div>
 
@@ -630,15 +749,17 @@ function App() {
                     <div className="con">
                       <div className="group">
                         <div>
-                          <div className="tit">계좌번호가 복사되었습니다.</div>
-                          <div className="bkinfo">
-                            <span>{copyText1}</span><br /><span>{copyText2}</span>
-                          </div>
+                          <div className="tit">{copyText}</div>
+                          {copyText1 !== '' && copyText2 !== '' &&
+                            <div className="bkinfo">
+                              <span>{copyText1}</span><br /><span>{copyText2}</span>
+                            </div>
+                          }
                         </div>
                       </div>
                     </div>
                     <div className="buttons">
-                      <span style={{cursor:'pointer'}} className="btn" onClick={() => {popClose('copyComplete');}}>확인</span>
+                      <span style={{ cursor: 'pointer' }} className="btn" onClick={() => { popClose('copyComplete'); }}>확인</span>
                     </div>
                   </form>
                 </div>

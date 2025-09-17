@@ -18,3 +18,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.image-gallery-thumbnail {
+  height: 80px;
+}
+
+.image-gallery-thumbnail-inner {
+  height: 70px;
+}
+
+.image-gallery-thumbnail-image {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  aspect-ratio: 4 / 3;
+}
