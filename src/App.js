@@ -62,6 +62,43 @@ function App() {
   const [copyText, setCopyText] = useState(''); // 복사된 텍스트
   const [copyText1, setCopyText1] = useState('');
   const [copyText2, setCopyText2] = useState('');
+  const [name, setName] = useState(''); // 이름
+  const [comment, setComment] = useState(''); // 댓글
+
+  const scriptUrl = process.env.REACT_APP_APPS_SCRIPT_URL;
+
+  async function addComment() {
+    if(name === '' || comment === '') {
+      setCopyText('이름과 댓글을 모두 입력해주세요.');
+      setCopyText1('');
+      setCopyText2('');
+      popOpen('0 1rem', 'copyComplete');
+      return;
+    }
+
+    fetch(scriptUrl, {
+      redirect: "follow",
+      method: "POST",
+      body: JSON.stringify({
+        name: name,
+        comment: comment
+      }),
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+    }).then((response) => {
+      console.log('response', response);
+    }).catch((error) => {
+      console.log('error', error)}
+    ).finally(() => {
+      setName('');
+      setComment('');
+      setCopyText('댓글이 등록되었습니다.');
+      setCopyText1('');
+      setCopyText2('');
+      popOpen('0 1rem', 'copyComplete');
+    });
+  }
 
   const music_player = () => {
     audio.loop = true;
@@ -224,7 +261,7 @@ function App() {
           <section className="visual-section">
             <div className="vertical-top">
               <div className="vertical-item name vertical-center">
-                <p className="name">
+                <div className="name">
                   <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem'}}>
                     <span className="vs-span" style={{display: 'inline-flex'}}>임현도</span>
                     <img src={heart} alt='heart' style={{display: 'inline-flex', width: '1.5rem'}}/>
@@ -235,7 +272,7 @@ function App() {
                     <img src={spring} alt='spring2' style={{width: '1.5rem', transform: 'rotate(60deg)'}}/>
                     <img src={invite} alt='invite' style={{position: 'absolute', transform: 'translateY(2.5rem) translateX(-0.5rem)'}}/>
                   </div>
-                </p>
+                </div>
               </div>
               <div className="vertical-item info">
                 <p className="p1">
@@ -597,16 +634,16 @@ function App() {
               <form action="">
                 <div className="group col-2 first">
                   <div>
-                    <input type="text" name="" id="" className="input" placeholder="이름" />
+                    <input type="text" name="" id="" className="input" placeholder="이름" value={name} onChange={(e) => {setName(e.target.value)}}/>
                   </div>
                 </div>
                 <div className="group">
                   <div>
-                    <textarea name="" id="" className="textarea"></textarea>
+                    <textarea name="" id="" className="textarea" value={comment} onChange={(e) => {setComment(e.target.value)}}></textarea>
                   </div>
                 </div>
                 <div className="buttons">
-                  <button type="button" className="btn submit">등록하기</button>
+                  <button style={{cursor:'pointer'}} type="button" className="btn submit" onClick={() => {addComment();}}>등록하기</button>
                 </div>
               </form>
             </div>
@@ -725,13 +762,13 @@ function App() {
                         하나은행
                       </div>
                       <div>
-                        <span>예금주 : </span> 박인경
+                        <span>예금주 : </span> 박은경
                       </div>
                     </div>
                     <div className="group">
                       <div>
                         <input name="BBankNum2" id="BBankNum2" className="input" readOnly value="439-910199-11107" />
-                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('439-910199-11107', 'accountCopyB', '하나은행 439-910199-11107', '예금주 박인경') }}>복사</button>
+                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('439-910199-11107', 'accountCopyB', '하나은행 439-910199-11107', '예금주 박은경') }}>복사</button>
                       </div>
                     </div>
                   </form>
