@@ -333,3 +333,16 @@
 .mcard_35 .message-section{
 	background-color:#eef8e9;
 }
+.mcard_35 .location-section .sec-tit {
+	margin-bottom: 1rem;
+}
+
+.mcard_35 .location-section .sec-txt {
+	margin-bottom:3.125rem;
+	font-family:'KoPub Batang';
+	font-size:0.750rem;
+	font-weight:300;
+	line-height:1rem;
+	text-align:center;
+	color:#777;
+}

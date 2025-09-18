@@ -5,7 +5,7 @@ import ImageGallery from "react-image-gallery";
 
 import music_01_off from './images/mcard_35/music_01_off.png';
 import music_01_on from './images/mcard_35/music_01_on.png';
-import music_02 from './music/bgm02.mp3';
+import music_03 from './music/bgm03.mp3';
 
 import heart from './images/common/heart.png';
 import invite from './images/common/invite.png';
@@ -20,45 +20,45 @@ import img06 from './images/picture/06.jpg';
 import img07 from './images/picture/07.jpg';
 import img08 from './images/picture/08.jpg';
 import img09 from './images/picture/09.jpg';
-import img10 from './images/picture/10.jpg';
-import img11 from './images/picture/11.jpg';
-import img12 from './images/picture/12.jpg';
-import img13 from './images/picture/13.jpg';
-import img14 from './images/picture/14.jpg';
-import img15 from './images/picture/15.jpg';
-import img16 from './images/picture/16.jpg';
-import img17 from './images/picture/17.jpg';
-import img18 from './images/picture/18.jpg';
-import img19 from './images/picture/19.jpg';
-import img20 from './images/picture/20.jpg';
-import img21 from './images/picture/21.jpg';
-import img22 from './images/picture/22.jpg';
-import img23 from './images/picture/23.jpg';
-import img24 from './images/picture/24.jpg';
-import img25 from './images/picture/25.jpg';
-import img26 from './images/picture/26.jpg';
-import img27 from './images/picture/27.jpg';
-import img28 from './images/picture/28.jpg';
-import img29 from './images/picture/29.jpg';
-import img30 from './images/picture/30.jpg';
-import img31 from './images/picture/31.jpg';
-import img32 from './images/picture/32.jpg';
-import img33 from './images/picture/33.jpg';
-import img34 from './images/picture/34.jpg';
-import img35 from './images/picture/35.jpg';
-import img36 from './images/picture/36.jpg';
-import img37 from './images/picture/37.jpg';
-import img38 from './images/picture/38.jpg';
-import img39 from './images/picture/39.jpg';
-import img40 from './images/picture/40.jpg';
-import img41 from './images/picture/41.jpg';
+// import img10 from './images/picture/10.jpg';
+// import img11 from './images/picture/11.jpg';
+// import img12 from './images/picture/12.jpg';
+// import img13 from './images/picture/13.jpg';
+// import img14 from './images/picture/14.jpg';
+// import img15 from './images/picture/15.jpg';
+// import img16 from './images/picture/16.jpg';
+// import img17 from './images/picture/17.jpg';
+// import img18 from './images/picture/18.jpg';
+// import img19 from './images/picture/19.jpg';
+// import img20 from './images/picture/20.jpg';
+// import img21 from './images/picture/21.jpg';
+// import img22 from './images/picture/22.jpg';
+// import img23 from './images/picture/23.jpg';
+// import img24 from './images/picture/24.jpg';
+// import img25 from './images/picture/25.jpg';
+// import img26 from './images/picture/26.jpg';
+// import img27 from './images/picture/27.jpg';
+// import img28 from './images/picture/28.jpg';
+// import img29 from './images/picture/29.jpg';
+// import img30 from './images/picture/30.jpg';
+// import img31 from './images/picture/31.jpg';
+// import img32 from './images/picture/32.jpg';
+// import img33 from './images/picture/33.jpg';
+// import img34 from './images/picture/34.jpg';
+// import img35 from './images/picture/35.jpg';
+// import img36 from './images/picture/36.jpg';
+// import img37 from './images/picture/37.jpg';
+// import img38 from './images/picture/38.jpg';
+// import img39 from './images/picture/39.jpg';
+// import img40 from './images/picture/40.jpg';
+// import img41 from './images/picture/41.jpg';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import $ from 'jquery';
 import { Oval } from 'react-loader-spinner';
 
 function App() {
-  const [audio] = useState(new Audio(music_02));
+  const [audio] = useState(new Audio(music_03));
   const [isPlaying, setIsPlaying] = useState(false);
   const [copyText, setCopyText] = useState(''); // 복사된 텍스트
   const [copyText1, setCopyText1] = useState('');
@@ -66,11 +66,12 @@ function App() {
   const [name, setName] = useState(''); // 이름
   const [comment, setComment] = useState(''); // 댓글
   const [isLoading, setIsLoading] = useState(false); // 로딩
+  const imageGalleryRef = useRef(null);
 
   const scriptUrl = process.env.REACT_APP_APPS_SCRIPT_URL;
 
   async function addComment() {
-    if(name === '' || comment === '') {
+    if (name === '' || comment === '') {
       setCopyText('이름과 댓글을 모두 입력해주세요.');
       setCopyText1('');
       setCopyText2('');
@@ -92,7 +93,8 @@ function App() {
     }).then((response) => {
       console.log('response', response);
     }).catch((error) => {
-      console.log('error', error)}
+      console.log('error', error)
+    }
     ).finally(() => {
       setIsLoading(false);
       setName('');
@@ -110,51 +112,55 @@ function App() {
   };
 
   useEffect(() => {
-    isPlaying ? audio.play() : audio.pause();
+    if(isPlaying && audio.paused) {
+      audio.play();
+    } else if(!isPlaying && !audio.paused) {
+      audio.pause();
+    }
   }, [isPlaying, audio]);
 
   const images = [
-    {original: img01,thumbnail: img01,},
-    {original: img02,thumbnail: img02,},
-    {original: img03,thumbnail: img03,},
-    {original: img04,thumbnail: img04,},
-    {original: img05,thumbnail: img05,},
-    {original: img06,thumbnail: img06,},
-    {original: img07,thumbnail: img07,},
-    {original: img08,thumbnail: img08,},
-    {original: img09,thumbnail: img09,},
-    {original: img10,thumbnail: img10,},
-    {original: img11,thumbnail: img11,},
-    {original: img12,thumbnail: img12,},
-    {original: img13,thumbnail: img13,},
-    {original: img14,thumbnail: img14,},
-    {original: img15,thumbnail: img15,},
-    {original: img16,thumbnail: img16,},
-    {original: img17,thumbnail: img17,},
-    {original: img18,thumbnail: img18,},
-    {original: img19,thumbnail: img19,},
-    {original: img20,thumbnail: img20,},
-    {original: img21,thumbnail: img21,},
-    {original: img22,thumbnail: img22,},
-    {original: img23,thumbnail: img23,},
-    {original: img24,thumbnail: img24,},
-    {original: img25,thumbnail: img25,},
-    {original: img26,thumbnail: img26,},
-    {original: img27,thumbnail: img27,},
-    {original: img28,thumbnail: img28,},
-    {original: img29,thumbnail: img29,},
-    {original: img30,thumbnail: img30,},
-    {original: img31,thumbnail: img31,},
-    {original: img32,thumbnail: img32,},
-    {original: img33,thumbnail: img33,},
-    {original: img34,thumbnail: img34,},
-    {original: img35,thumbnail: img35,},
-    {original: img36,thumbnail: img36,},
-    {original: img37,thumbnail: img37,},
-    {original: img38,thumbnail: img38,},
-    {original: img39,thumbnail: img39,},
-    {original: img40,thumbnail: img40,},
-    {original: img41,thumbnail: img41,},
+    { original: img01, thumbnail: img01, },
+    { original: img02, thumbnail: img02, },
+    { original: img03, thumbnail: img03, },
+    { original: img04, thumbnail: img04, },
+    { original: img05, thumbnail: img05, },
+    { original: img06, thumbnail: img06, },
+    { original: img07, thumbnail: img07, },
+    { original: img08, thumbnail: img08, },
+    { original: img09, thumbnail: img09, },
+    // {original: img10,thumbnail: img10,},
+    // {original: img11,thumbnail: img11,},
+    // {original: img12,thumbnail: img12,},
+    // {original: img13,thumbnail: img13,},
+    // {original: img14,thumbnail: img14,},
+    // {original: img15,thumbnail: img15,},
+    // {original: img16,thumbnail: img16,},
+    // {original: img17,thumbnail: img17,},
+    // {original: img18,thumbnail: img18,},
+    // {original: img19,thumbnail: img19,},
+    // {original: img20,thumbnail: img20,},
+    // {original: img21,thumbnail: img21,},
+    // {original: img22,thumbnail: img22,},
+    // {original: img23,thumbnail: img23,},
+    // {original: img24,thumbnail: img24,},
+    // {original: img25,thumbnail: img25,},
+    // {original: img26,thumbnail: img26,},
+    // {original: img27,thumbnail: img27,},
+    // {original: img28,thumbnail: img28,},
+    // {original: img29,thumbnail: img29,},
+    // {original: img30,thumbnail: img30,},
+    // {original: img31,thumbnail: img31,},
+    // {original: img32,thumbnail: img32,},
+    // {original: img33,thumbnail: img33,},
+    // {original: img34,thumbnail: img34,},
+    // {original: img35,thumbnail: img35,},
+    // {original: img36,thumbnail: img36,},
+    // {original: img37,thumbnail: img37,},
+    // {original: img38,thumbnail: img38,},
+    // {original: img39,thumbnail: img39,},
+    // {original: img40,thumbnail: img40,},
+    // {original: img41,thumbnail: img41,},
   ];
 
   function popOpen(padding, id) { // 팝업 열기 onclick
@@ -248,6 +254,19 @@ function App() {
     window.location.href = 'sms:' + phoneNumber;
   }
 
+  useEffect(() => {
+    const promise = audio.play();
+
+    if (promise !== undefined) {
+      promise.then(_ => {
+        setIsPlaying(true);
+        console.log('Autoplay started!');
+      }).catch(error => {
+        console.log('Autoplay not started!');
+      });
+    }
+  }, [audio]);
+
   return (
     <div className='mcard_35'>
       <div className='wrapper'>
@@ -266,15 +285,15 @@ function App() {
             <div className="vertical-top">
               <div className="vertical-item name vertical-center">
                 <div className="name">
-                  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem'}}>
-                    <span className="vs-span" style={{display: 'inline-flex'}}>임현도</span>
-                    <img src={heart} alt='heart' style={{display: 'inline-flex', width: '1.5rem'}}/>
-                    <span className="vs-span" style={{display: 'inline-flex'}}>조보라</span>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem' }}>
+                    <span className="vs-span" style={{ display: 'inline-flex' }}>임현도</span>
+                    <img src={heart} alt='heart' style={{ display: 'inline-flex', width: '1.5rem' }} />
+                    <span className="vs-span" style={{ display: 'inline-flex' }}>조보라</span>
                   </div>
-                  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', paddingLeft: '1rem', paddingRight: '1rem'}}>
-                    <img src={spring} alt='spring1' style={{width: '1.5rem', transform: 'scaleX(-1) rotate(60deg)'}}/>
-                    <img src={spring} alt='spring2' style={{width: '1.5rem', transform: 'rotate(60deg)'}}/>
-                    <img src={invite} alt='invite' style={{position: 'absolute', transform: 'translateY(2.5rem) translateX(-0.5rem)'}}/>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', paddingLeft: '1rem', paddingRight: '1rem' }}>
+                    <img src={spring} alt='spring1' style={{ width: '1.5rem', transform: 'scaleX(-1) rotate(60deg)' }} />
+                    <img src={spring} alt='spring2' style={{ width: '1.5rem', transform: 'rotate(60deg)' }} />
+                    <img src={invite} alt='invite' style={{ position: 'absolute', transform: 'translateY(2.5rem) translateX(-0.5rem)' }} />
                   </div>
                 </div>
               </div>
@@ -344,15 +363,15 @@ function App() {
               <div className="row">
                 <div className="slsb-tit">신랑에게 연락하기</div>
                 <div className="slsb-btn">
-                  <button className="com-btn tel sl" style={{ cursor: 'pointer' }} onClick={() => {makeCall('010-4244-1604')}}>연락하기</button>
-                  <button className="com-btn sms" style={{ cursor: 'pointer' }} onClick={() => {makeSms('010-4244-1604')}}>문자보내기</button>
+                  <button className="com-btn tel sl" style={{ cursor: 'pointer' }} onClick={() => { makeCall('010-4244-1604') }}>연락하기</button>
+                  <button className="com-btn sms" style={{ cursor: 'pointer' }} onClick={() => { makeSms('010-4244-1604') }}>문자보내기</button>
                 </div>
               </div>
               <div className="row">
                 <div className="slsb-tit">신부에게 연락하기</div>
                 <div className="slsb-btn">
-                  <button className="com-btn tel sb" style={{ cursor: 'pointer' }} onClick={() => {makeCall('010-2506-5013')}}>연락하기</button>
-                  <button className="com-btn sms" style={{ cursor: 'pointer' }} onClick={() => {makeSms('010-2506-5013')}}>문자보내기</button>
+                  <button className="com-btn tel sb" style={{ cursor: 'pointer' }} onClick={() => { makeCall('010-2506-5013') }}>연락하기</button>
+                  <button className="com-btn sms" style={{ cursor: 'pointer' }} onClick={() => { makeSms('010-2506-5013') }}>문자보내기</button>
                 </div>
               </div>
             </div>
@@ -367,15 +386,15 @@ function App() {
                 <div className="box first">
                   <div className="name"><span>아버지</span> <strong>임정후</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl" onClick={() => {makeCall('010-3696-7840')}}>연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-3696-7840')}}>문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl" onClick={() => { makeCall('010-3696-7840') }}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => { makeSms('010-3696-7840') }}>문자보내기</button>
                   </div>
                 </div>
                 <div className="box">
                   <div className="name"><span>어머니</span> <strong>양인자</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl" onClick={() => {makeCall('010-8664-1604')}}>연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-8664-1604')}}>문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sl" onClick={() => { makeCall('010-8664-1604') }}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => { makeSms('010-8664-1604') }}>문자보내기</button>
                   </div>
                 </div>
               </div>
@@ -384,15 +403,15 @@ function App() {
                 <div className="box first">
                   <div className="name"><span>아버지</span> <strong>조인수</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb" onClick={() => {makeCall('010-5604-5013')}}>연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-5604-5013')}}>문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb" onClick={() => { makeCall('010-5604-5013') }}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => { makeSms('010-5604-5013') }}>문자보내기</button>
                   </div>
                 </div>
                 <div className="box">
                   <div className="name"><span>어머니</span> <strong>박은경</strong></div>
                   <div className="honju-btn">
-                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb" onClick={() => {makeCall('010-2431-5013')}}>연락하기</button>
-                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => {makeSms('010-2431-5013')}}>문자보내기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn tel sb" onClick={() => { makeCall('010-2431-5013') }}>연락하기</button>
+                    <button style={{ cursor: 'pointer' }} className="com-btn sms" onClick={() => { makeSms('010-2431-5013') }}>문자보내기</button>
                   </div>
                 </div>
               </div>
@@ -529,15 +548,17 @@ function App() {
           {/* 달력 */}
           {/* 갤러리 */}
           <section className="gallery-section">
-            <div className="sec-tit">하 나 되 는 날</div>
+            <div className="sec-tit">갤 러 리</div>
             <div className="contain">
               <ImageGallery
+                ref={imageGalleryRef}
                 items={images}
-                showFullscreenButton={true}
+                showFullscreenButton={false}
                 useBrowserFullscreen={false}
                 autoPlay={true}
                 showPlayButton={true}
                 slideDuration={450}
+                onClick={() => { imageGalleryRef.current.toggleFullScreen(); }}
               />
             </div>
           </section>
@@ -552,7 +573,7 @@ function App() {
           {/* 텍스트 배너 */}
           {/* 오시는길 */}
           <section className="location-section">
-            <div className="sec-tit">함 께 가 는 길</div>
+            <div className="sec-tit">오 시 는 길</div>
             <div className="map-area">
               <div className="head">
                 <div className="tit">성균관컨벤션웨딩홀</div>
@@ -560,7 +581,7 @@ function App() {
                   <p>서울특별시 종로구 성균관로 31 (명륜3가 53번지)</p>
                   <p>Tel. 02-744-0677</p>
                 </div>
-                <button style={{ cursor: 'pointer' }} className="tel" onClick={() => {makeCall('02-744-0677')}}>전화걸기</button>
+                <button style={{ cursor: 'pointer' }} className="tel" onClick={() => { makeCall('02-744-0677') }}>전화걸기</button>
               </div>
               <div id="map_canvas" className="map">
                 <div style={{ font: 'normal normal 400 12px/normal dotum, sans-serif', width: '100%', height: '100%', color: '#333', position: 'relative' }}>
@@ -608,6 +629,90 @@ function App() {
             </div>
           </section>
           {/* 오시는길 */}
+          <section className="greeting-section">
+            <div className="sec-tit">신랑 측 피로연 안내</div>
+            <div className="sec-txt">거리가 멀어 예식에 참석하시기<br />
+              어려운 분들을 위해 혼례에 앞서<br />
+              피로연 자리를 마련하였습니다.<br />
+              귀한 발걸음으로<br />
+              두 사람의 앞날을 축복하여 주시면<br />
+              더 큰 기쁨과 격려가 되겠습니다.
+            </div>
+            <div className="info">
+              <div className="ib">
+                <div className="tb">
+                  <div className="row">
+                    <p className="honju" style={{textAlign: 'left'}}>
+                      <span className="gt-span">일시 : 1월 3일 토요일 오후 13시 ~ 17시</span>
+                    </p>
+                  </div>
+                  <div className="row">
+                    <p className="honju" style={{textAlign: 'left'}}>
+                      <span className="gt-span">장소 : 좋은곳</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {/* 오시는길 2 */}
+          <section className="location-section">
+            <div className="sec-tit">피로연장 오시는 길</div>
+            <div className="map-area">
+              <div className="head">
+                <div className="tit">성균관컨벤션웨딩홀</div>
+                <div className="txt">
+                  <p>서울특별시 종로구 성균관로 31 (명륜3가 53번지)</p>
+                  <p>Tel. 02-744-0677</p>
+                </div>
+                <button style={{ cursor: 'pointer' }} className="tel" onClick={() => { makeCall('02-744-0677') }}>전화걸기</button>
+              </div>
+              <div id="map_canvas" className="map">
+                <div style={{ font: 'normal normal 400 12px/normal dotum, sans-serif', width: '100%', height: '100%', color: '#333', position: 'relative' }}>
+                  <div style={{ height: '100%' }}>
+                    <a href="https://map.kakao.com/?urlX=499269.9999999987&amp;urlY=1134994.9999999988&amp;itemId=913429074&amp;q=%EC%84%B1%EA%B7%A0%EA%B4%80%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80&amp;srcid=913429074&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank" rel="noreferrer">
+                      <img className="map" src="http://t1.daumcdn.net/roughmap/imgmap/8b159ea69d2ffb8fde03cc4400ef8f646e6e2f9e92e964ccbf62660b2f6f7bbf" width="100%" height="100%" alt='map'></img>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="link">
+                <ul>
+                  <li>
+                    <a className="tmap" href='tmap://search?name=성균관컨벤션웨딩홀' target='_blank' rel="noreferrer">티맵</a>
+                  </li>
+                  <li>
+                    <a className="navermap" href='https://naver.me/IMyAR0V0' target='_blank' rel="noreferrer">네이버지도</a>
+                  </li>
+                  <li>
+                    <a className="kakaomap" href='https://map.kakao.com/?urlX=499269.9999999987&amp;urlY=1134994.9999999988&amp;itemId=913429074&amp;q=%EC%84%B1%EA%B7%A0%EA%B4%80%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80&amp;srcid=913429074&amp;map_type=TYPE_MAP&amp;from=roughmap' target='_blank' rel="noreferrer">카카오맵</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="info">
+              <div className="contain">
+                <dl>
+                  <dt>지하철 이용시 : 4호선 혜화역 하차 → 4번 출구</dt>
+                  <dd>셔틀버스 : 혜화역 4번 출구 T스토어 앞 (예식에 한함)</dd>
+                  <dd>혜화역 1번출구 → 7번 마을버스 (성균관대 정문하차)</dd>
+                  <dd>도보이용시 : 8분거리</dd>
+                </dl>
+                <dl>
+                  <dt>버스 이용시 : 명륜3가, 성대입구 정류장 하차</dt>
+                  <dd>간선버스 - 100, 102, 104, 107, 140, 143, 150, 151, 160, 162, 171, 172, 272, 301</dd>
+                  <dd>광역버스 - 1101, 7101</dd>
+                </dl>
+                <dl>
+                  <dt>자가용 이용시</dt>
+                  <dd>네비게이션 : "성균관컨벤션웨딩홀" 검색</dd>
+                  <dd>주차장 안내 : 본관 주차장, 제1주차장, 성균관대학교 주차장 (하객주차 2시간 무료)</dd>
+                  <dd>성균관대학교 정문 안 주차팀 안내 배치</dd>
+                </dl>
+              </div>
+            </div>
+          </section>
+          {/* 오시는길 2 */}
           {/* 축의금 계좌번호 */}
           <section className="account-section">
             <div className="sec-tit">신랑신부에게 마음 전하기</div>
@@ -638,16 +743,16 @@ function App() {
               <form action="">
                 <div className="group col-2 first">
                   <div>
-                    <input type="text" name="" id="" className="input" placeholder="이름" value={name} onChange={(e) => {setName(e.target.value)}}/>
+                    <input type="text" name="" id="" className="input" placeholder="이름" value={name} onChange={(e) => { setName(e.target.value) }} />
                   </div>
                 </div>
                 <div className="group">
                   <div>
-                    <textarea name="" id="" className="textarea" value={comment} onChange={(e) => {setComment(e.target.value)}}></textarea>
+                    <textarea name="" id="" className="textarea" value={comment} onChange={(e) => { setComment(e.target.value) }}></textarea>
                   </div>
                 </div>
                 <div className="buttons">
-                  <button style={{cursor:'pointer'}} type="button" className="btn submit" onClick={() => {addComment();}}>등록하기</button>
+                  <button style={{ cursor: 'pointer' }} type="button" className="btn submit" onClick={() => { addComment(); }}>등록하기</button>
                 </div>
               </form>
             </div>
@@ -810,7 +915,7 @@ function App() {
         </section>
       </div>
       {isLoading && (
-        <div style={{width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 9999, backgroundColor: 'rgba(0, 0, 0, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+        <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 9999, backgroundColor: 'rgba(0, 0, 0, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
           <Oval
             strokeWidth={4}
             strokeWidthSecondary={4}
