@@ -801,7 +801,7 @@ function App() {
                     </div>
                     <div className="group col-2">
                       <div>
-                        국민은행
+                        은행
                       </div>
                       <div>
                         <span>예금주 : </span> 임정후
@@ -809,13 +809,13 @@ function App() {
                     </div>
                     <div className="group">
                       <div>
-                        <input name="GBankNum2" id="GBankNum2" className="input" readOnly value="000-123-456789" />
-                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('000-123-456789', 'accountCopyG', '국민은행 000-123-456789', '예금주 임정후') }}>복사</button>
+                        <input name="GBankNum2" id="GBankNum2" className="input" readOnly value="-" />
+                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('-', 'accountCopyG', '은행 -', '예금주 임정후') }}>복사</button>
                       </div>
                     </div>
                     <div className="group col-2">
                       <div>
-                        국민은행
+                        농협은행
                       </div>
                       <div>
                         <span>예금주 : </span> 양인자
@@ -823,8 +823,8 @@ function App() {
                     </div>
                     <div className="group">
                       <div>
-                        <input name="GBankNum2" id="GBankNum2" className="input" readOnly value="000-123-456789" />
-                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('000-123-456789', 'accountCopyG', '국민은행 000-123-456789', '예금주 양인자') }}>복사</button>
+                        <input name="GBankNum3" id="GBankNum3" className="input" readOnly value="903810-56-013199" />
+                        <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('903810-56-013199', 'accountCopyG', '농협은행 903810-56-013199', '예금주 양인자') }}>복사</button>
                       </div>
                     </div>
                   </form>
@@ -878,7 +878,7 @@ function App() {
                     </div>
                     <div className="group">
                       <div>
-                        <input name="BBankNum2" id="BBankNum2" className="input" readOnly value="439-910199-11107" />
+                        <input name="BBankNum3" id="BBankNum3" className="input" readOnly value="439-910199-11107" />
                         <button style={{ cursor: 'pointer' }} type="button" className="btn" onClick={() => { jsCopyLink('439-910199-11107', 'accountCopyB', '하나은행 439-910199-11107', '예금주 박은경') }}>복사</button>
                       </div>
                     </div>

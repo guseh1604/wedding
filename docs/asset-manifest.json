@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wedding/static/css/main.0ea57ba2.css",
-    "main.js": "/wedding/static/js/main.5f7a8def.js",
+    "main.js": "/wedding/static/js/main.972639d7.js",
     "static/js/206.89836faa.chunk.js": "/wedding/static/js/206.89836faa.chunk.js",
     "static/media/03.jpg": "/wedding/static/media/03.558f143b7fdba8d9b908.jpg",
     "static/media/07.jpg": "/wedding/static/media/07.77ad39908dd3659988a3.jpg",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.0ea57ba2.css",
-    "static/js/main.5f7a8def.js"
+    "static/js/main.972639d7.js"
   ]
 }
