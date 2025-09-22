@@ -10,6 +10,7 @@ import music_03 from './music/bgm03.mp3';
 import heart from './images/common/heart.png';
 import invite from './images/common/invite.png';
 import spring from './images/common/spring.png';
+import parking from './images/parking_guide.png';
 
 import img01 from './images/picture/01.jpg';
 import img02 from './images/picture/02.jpg';
@@ -643,12 +644,12 @@ function App() {
                 <div className="tb">
                   <div className="row">
                     <p className="honju" style={{textAlign: 'left'}}>
-                      <span className="gt-span">일시 : 1월 3일 토요일 오후 13시 ~ 17시</span>
+                      <span className="gt-span">일시 : 1월 3일 토요일 오후 12시 ~ 16시</span>
                     </p>
                   </div>
                   <div className="row">
                     <p className="honju" style={{textAlign: 'left'}}>
-                      <span className="gt-span">장소 : 좋은곳</span>
+                      <span className="gt-span">장소 : 노팅힐웨딩컨벤션</span>
                     </p>
                   </div>
                 </div>
@@ -660,18 +661,18 @@ function App() {
             <div className="sec-tit">피로연장 오시는 길</div>
             <div className="map-area">
               <div className="head">
-                <div className="tit">성균관컨벤션웨딩홀</div>
+                <div className="tit">노팅힐웨딩컨벤션</div>
                 <div className="txt">
-                  <p>서울특별시 종로구 성균관로 31 (명륜3가 53번지)</p>
-                  <p>Tel. 02-744-0677</p>
+                  <p>제주특별자치도 제주시 도두1동 2325(도공로 157)</p>
+                  <p>Tel. 064-749-3313</p>
                 </div>
-                <button style={{ cursor: 'pointer' }} className="tel" onClick={() => { makeCall('02-744-0677') }}>전화걸기</button>
+                <button style={{ cursor: 'pointer' }} className="tel" onClick={() => { makeCall('064-749-3313') }}>전화걸기</button>
               </div>
               <div id="map_canvas" className="map">
                 <div style={{ font: 'normal normal 400 12px/normal dotum, sans-serif', width: '100%', height: '100%', color: '#333', position: 'relative' }}>
                   <div style={{ height: '100%' }}>
-                    <a href="https://map.kakao.com/?urlX=499269.9999999987&amp;urlY=1134994.9999999988&amp;itemId=913429074&amp;q=%EC%84%B1%EA%B7%A0%EA%B4%80%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80&amp;srcid=913429074&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank" rel="noreferrer">
-                      <img className="map" src="http://t1.daumcdn.net/roughmap/imgmap/8b159ea69d2ffb8fde03cc4400ef8f646e6e2f9e92e964ccbf62660b2f6f7bbf" width="100%" height="100%" alt='map'></img>
+                    <a href="https://map.kakao.com/?urlX=376735.99999999744&amp;urlY=527.0000000006985&amp;itemId=1336190155&amp;q=%EB%85%B8%ED%8C%85%ED%9E%90%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&amp;srcid=1336190155&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank" rel="noreferrer">
+                      <img className="map" src="http://t1.daumcdn.net/roughmap/imgmap/8d572fa0d796539e12afdf58faeb2927c66ec9a693cd840d2df336b3fc41073a" width="100%" height="100%" alt='map'></img>
                     </a>
                   </div>
                 </div>
@@ -679,10 +680,10 @@ function App() {
               <div className="link">
                 <ul>
                   <li>
-                    <a className="tmap" href='tmap://search?name=성균관컨벤션웨딩홀' target='_blank' rel="noreferrer">티맵</a>
+                    <a className="tmap" href='tmap://search?name=노팅힐웨딩컨벤션' target='_blank' rel="noreferrer">티맵</a>
                   </li>
                   <li>
-                    <a className="navermap" href='https://naver.me/IMyAR0V0' target='_blank' rel="noreferrer">네이버지도</a>
+                    <a className="navermap" href='https://naver.me/xnhwKVvQ' target='_blank' rel="noreferrer">네이버지도</a>
                   </li>
                   <li>
                     <a className="kakaomap" href='https://map.kakao.com/?urlX=499269.9999999987&amp;urlY=1134994.9999999988&amp;itemId=913429074&amp;q=%EC%84%B1%EA%B7%A0%EA%B4%80%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80&amp;srcid=913429074&amp;map_type=TYPE_MAP&amp;from=roughmap' target='_blank' rel="noreferrer">카카오맵</a>
@@ -693,21 +694,22 @@ function App() {
             <div className="info">
               <div className="contain">
                 <dl>
-                  <dt>지하철 이용시 : 4호선 혜화역 하차 → 4번 출구</dt>
-                  <dd>셔틀버스 : 혜화역 4번 출구 T스토어 앞 (예식에 한함)</dd>
-                  <dd>혜화역 1번출구 → 7번 마을버스 (성균관대 정문하차)</dd>
-                  <dd>도보이용시 : 8분거리</dd>
-                </dl>
-                <dl>
-                  <dt>버스 이용시 : 명륜3가, 성대입구 정류장 하차</dt>
-                  <dd>간선버스 - 100, 102, 104, 107, 140, 143, 150, 151, 160, 162, 171, 172, 272, 301</dd>
-                  <dd>광역버스 - 1101, 7101</dd>
+                  <dt>버스 이용시 : 중앙병원, 월랑입구(북) 하차 후 도보 3분</dt>
+                  <dd>함덕 탑승 :</dd>
+                  <dd> 300, 325, 326번 노선</dd>
+                  <dd> </dd>
+                  <dd>제주 국제공항6(노형, 연동방면) 탑승 :</dd>
+                  <dd> 370, 454, 315번 노선 - 월랑입구(북) 하차</dd>
+                  <dd> 331, 325, 326번 노선 - S중앙병원 하차</dd>
                 </dl>
                 <dl>
                   <dt>자가용 이용시</dt>
-                  <dd>네비게이션 : "성균관컨벤션웨딩홀" 검색</dd>
-                  <dd>주차장 안내 : 본관 주차장, 제1주차장, 성균관대학교 주차장 (하객주차 2시간 무료)</dd>
-                  <dd>성균관대학교 정문 안 주차팀 안내 배치</dd>
+                  <dd>네비게이션 : "노팅힐웨딩컨벤션" 검색</dd>
+                  <dd>주차장 안내 : 주차장 1(노팅힐 외부), 주차장 2(별관), 주차장 3(자동차 극장)</dd>
+                  <dd>안전요원의 안내에 따라 주차장 1,2,3,4 순으로 이용 부탁드립니다.</dd>
+                </dl>
+                <dl>
+                  <img src={parking} alt='parking' />
                 </dl>
               </div>
             </div>

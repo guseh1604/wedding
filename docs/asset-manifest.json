@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wedding/static/css/main.0ea57ba2.css",
-    "main.js": "/wedding/static/js/main.461ffc02.js",
+    "main.js": "/wedding/static/js/main.5f7a8def.js",
     "static/js/206.89836faa.chunk.js": "/wedding/static/js/206.89836faa.chunk.js",
     "static/media/03.jpg": "/wedding/static/media/03.558f143b7fdba8d9b908.jpg",
     "static/media/07.jpg": "/wedding/static/media/07.77ad39908dd3659988a3.jpg",
@@ -13,6 +13,7 @@
     "static/media/02.jpg": "/wedding/static/media/02.2ccc8db28b181d1b6451.jpg",
     "static/media/09.jpg": "/wedding/static/media/09.9a60b3c9234eda7a56bf.jpg",
     "static/media/bgm03.mp3": "/wedding/static/media/bgm03.48f96d094d43f12d8669.mp3",
+    "static/media/parking_guide.png": "/wedding/static/media/parking_guide.257e41fb11a5253ecdc4.png",
     "static/media/heart.png": "/wedding/static/media/heart.a8e8789c8581025d90ea.png",
     "static/media/nanum-myeongjo-v15-latin_korean-700.woff": "/wedding/static/media/nanum-myeongjo-v15-latin_korean-700.97542ed131240b539d10.woff",
     "static/media/nanum-myeongjo-v15-latin_korean-regular.woff": "/wedding/static/media/nanum-myeongjo-v15-latin_korean-regular.a4da3457029bb57418b4.woff",
@@ -35,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.0ea57ba2.css",
-    "static/js/main.461ffc02.js"
+    "static/js/main.5f7a8def.js"
   ]
 }
