@@ -21,12 +21,12 @@ import img06 from './images/picture/06.jpg';
 import img07 from './images/picture/07.jpg';
 import img08 from './images/picture/08.jpg';
 import img09 from './images/picture/09.jpg';
-// import img10 from './images/picture/10.jpg';
-// import img11 from './images/picture/11.jpg';
+import img10 from './images/picture/10.jpg';
+import img11 from './images/picture/11.jpg';
 // import img12 from './images/picture/12.jpg';
 // import img13 from './images/picture/13.jpg';
 // import img14 from './images/picture/14.jpg';
-// import img15 from './images/picture/15.jpg';
+import img15 from './images/picture/15.jpg';
 // import img16 from './images/picture/16.jpg';
 // import img17 from './images/picture/17.jpg';
 // import img18 from './images/picture/18.jpg';
@@ -130,12 +130,12 @@ function App() {
     { original: img07, thumbnail: img07, },
     { original: img08, thumbnail: img08, },
     { original: img09, thumbnail: img09, },
-    // {original: img10,thumbnail: img10,},
-    // {original: img11,thumbnail: img11,},
+    {original: img10,thumbnail: img10,},
+    {original: img11,thumbnail: img11,},
     // {original: img12,thumbnail: img12,},
     // {original: img13,thumbnail: img13,},
     // {original: img14,thumbnail: img14,},
-    // {original: img15,thumbnail: img15,},
+    {original: img15,thumbnail: img15,},
     // {original: img16,thumbnail: img16,},
     // {original: img17,thumbnail: img17,},
     // {original: img18,thumbnail: img18,},
