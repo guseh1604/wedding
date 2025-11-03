@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/wedding/static/css/main.46103077.css",
-    "main.js": "/wedding/static/js/main.1f0a70ef.js",
+    "main.js": "/wedding/static/js/main.f4fb18ad.js",
     "static/js/206.89836faa.chunk.js": "/wedding/static/js/206.89836faa.chunk.js",
     "static/media/bgm03.mp3": "/wedding/static/media/bgm03.48f96d094d43f12d8669.mp3",
-    "static/media/15.jpg": "/wedding/static/media/15.8551b262d1b566051147.jpg",
-    "static/media/11.jpg": "/wedding/static/media/11.32badb5cc3e2656e7d9c.jpg",
-    "static/media/10.jpg": "/wedding/static/media/10.24eaf1c187305224f5ef.jpg",
-    "static/media/08.jpg": "/wedding/static/media/08.d4abea2372169c54a816.jpg",
-    "static/media/09.jpg": "/wedding/static/media/09.89ca25a4a5cea6d897e5.jpg",
+    "static/media/03.jpg": "/wedding/static/media/03.8551b262d1b566051147.jpg",
+    "static/media/02.jpg": "/wedding/static/media/02.32badb5cc3e2656e7d9c.jpg",
+    "static/media/01.jpg": "/wedding/static/media/01.24eaf1c187305224f5ef.jpg",
+    "static/media/11.jpg": "/wedding/static/media/11.d4abea2372169c54a816.jpg",
+    "static/media/12.jpg": "/wedding/static/media/12.89ca25a4a5cea6d897e5.jpg",
     "static/media/parking_guide.png": "/wedding/static/media/parking_guide.257e41fb11a5253ecdc4.png",
     "static/media/heart.png": "/wedding/static/media/heart.a8e8789c8581025d90ea.png",
     "static/media/nanum-myeongjo-v15-latin_korean-700.woff": "/wedding/static/media/nanum-myeongjo-v15-latin_korean-700.97542ed131240b539d10.woff",
     "static/media/nanum-myeongjo-v15-latin_korean-regular.woff": "/wedding/static/media/nanum-myeongjo-v15-latin_korean-regular.a4da3457029bb57418b4.woff",
-    "static/media/01.jpg": "/wedding/static/media/01.85d96f31b0237e90d0e3.jpg",
-    "static/media/04.jpg": "/wedding/static/media/04.cc444db95e0487f1c591.jpg",
-    "static/media/03.jpg": "/wedding/static/media/03.ecc32a5c0940217fd56b.jpg",
-    "static/media/05.jpg": "/wedding/static/media/05.5bbc89429097d35d9cbb.jpg",
+    "static/media/04.jpg": "/wedding/static/media/04.85d96f31b0237e90d0e3.jpg",
+    "static/media/07.jpg": "/wedding/static/media/07.cc444db95e0487f1c591.jpg",
+    "static/media/06.jpg": "/wedding/static/media/06.ecc32a5c0940217fd56b.jpg",
+    "static/media/08.jpg": "/wedding/static/media/08.5bbc89429097d35d9cbb.jpg",
     "static/media/invite.png": "/wedding/static/media/invite.7fa17b5ef93991781589.png",
-    "static/media/02.jpg": "/wedding/static/media/02.6e1fcaf5304eb58eb312.jpg",
-    "static/media/06.jpg": "/wedding/static/media/06.84611e7bd81f027cb48c.jpg",
-    "static/media/07.jpg": "/wedding/static/media/07.b1e12e49920dcbae1bda.jpg",
+    "static/media/05.jpg": "/wedding/static/media/05.6e1fcaf5304eb58eb312.jpg",
+    "static/media/09.jpg": "/wedding/static/media/09.84611e7bd81f027cb48c.jpg",
+    "static/media/10.jpg": "/wedding/static/media/10.b1e12e49920dcbae1bda.jpg",
     "static/media/NotoSanskr-Bold.woff": "/wedding/static/media/NotoSanskr-Bold.5204bbd1efd6bc510b9a.woff",
     "static/media/NotoSanskr-Regular.woff": "/wedding/static/media/NotoSanskr-Regular.0091f12f78433f45526f.woff",
     "static/media/NotoSanskr-Medium.woff": "/wedding/static/media/NotoSanskr-Medium.8ff7c1e0be1c3029edbb.woff",
@@ -39,6 +39,6 @@
   },
   "entrypoints": [
     "static/css/main.46103077.css",
-    "static/js/main.1f0a70ef.js"
+    "static/js/main.f4fb18ad.js"
   ]
 }
